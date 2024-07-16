@@ -1,2 +1,3 @@
-pip install pygame
-python code/main.py
+## ZEZO Game
+
+run `python code/main.py` to start the game
