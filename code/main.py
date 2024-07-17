@@ -3,6 +3,7 @@ from player import Player
 from sprites import *
 from random import randint
 from pytmx.util_pygame import load_pygame
+from groups import AllSprites
 
 class Game:
     def __init__(self):
@@ -14,7 +15,7 @@ class Game:
         self.running = True
         
         #groups
-        self.all_sprites = pygame.sprite.Group()
+        self.all_sprites = AllSprites()
         self.collision_sprites = pygame.sprite.Group()
 
         self.setup()
@@ -30,7 +31,7 @@ class Game:
         for obj in map.get_layer_by_name('Objects'):
             CollisionSprite((obj.x, obj.y),obj.image, (self.all_sprites, self.collision_sprites))
         
-        for obj in map.get_layer_by_name('Collision'):
+        for obj in map.get_layer_by_name('Collisions'):
             CollisionSprite((obj.x, obj.y),pygame.Surface((obj.width, obj.height)), self.collision_sprites)
     
         
