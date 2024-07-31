@@ -49,7 +49,7 @@ class Player(pygame.sprite.Sprite):
                     self.direction.y = 0  # Stop vertical movement
 
         # Ensure the player remains within the visible area
-        self.hitbox_rect.clamp_ip(pygame.Rect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT))
+        # self.hitbox_rect.clamp_ip(pygame.Rect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT))
 
     def update(self, dt):
         self.input()

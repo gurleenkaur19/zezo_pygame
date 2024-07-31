@@ -50,7 +50,7 @@ class Game:
 
             # draw 
             self.display_surface.fill(('black'))
-            self.all_sprites.draw(self.display_surface)
+            self.all_sprites.draw(self.player.rect.center)
             pygame.display.update()
 
         pygame.quit()
