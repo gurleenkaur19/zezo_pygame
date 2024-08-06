@@ -56,7 +56,7 @@
 12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12
 </data>
  </layer>
- <objectgroup id="4" name="Entities" visible="0">
+ <objectgroup id="4" name="Entities">
   <object id="38" name="Player" x="1693.33" y="1612">
    <point/>
   </object>
@@ -150,19 +150,19 @@
   <object id="68" name="Enemy" x="1986.67" y="1429.33">
    <point/>
   </object>
-  <object id="69" x="1064" y="1513.33">
+  <object id="69" name="Enemy" x="1064" y="1513.33">
    <point/>
   </object>
-  <object id="70" x="1272" y="2018.67">
+  <object id="70" name="Enemy" x="1272" y="2018.67">
    <point/>
   </object>
-  <object id="71" x="1618.67" y="1912">
+  <object id="71" name="Enemy" x="1618.67" y="1912">
    <point/>
   </object>
-  <object id="72" x="1473.33" y="1220">
+  <object id="72" name="Enemy" x="1473.33" y="1220">
    <point/>
   </object>
-  <object id="73" x="1140" y="1122.67">
+  <object id="73" name="Enemy" x="1140" y="1122.67">
    <point/>
   </object>
  </objectgroup>
@@ -216,7 +216,7 @@
   <object id="197" x="806.497" y="1964.51" width="117.65" height="115.19"/>
   <object id="198" x="1603.96" y="2184.23" width="180.983" height="172.059"/>
  </objectgroup>
- <objectgroup id="3" name="Objects">
+ <objectgroup id="3" name="Objects" visible="0">
   <object id="1" gid="218" x="2534.67" y="1940" width="64" height="104"/>
   <object id="2" gid="218" x="1686.66" y="2285.33" width="64" height="104"/>
   <object id="3" gid="218" x="858.667" y="2408" width="64" height="104"/>
