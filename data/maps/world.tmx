@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="52" height="50" tilewidth="64" tileheight="64" infinite="0" nextlayerid="5" nextobjectid="203">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="52" height="50" tilewidth="64" tileheight="64" infinite="0" nextlayerid="5" nextobjectid="206">
  <tileset firstgid="1" source="../tilesets/world_tileset.tsx"/>
  <tileset firstgid="211" source="../tilesets/Objects.tsx"/>
  <layer id="1" name="Ground" width="52" height="50">
@@ -166,10 +166,10 @@
    <point/>
   </object>
  </objectgroup>
- <objectgroup id="2" name="Collisions">
+ <objectgroup id="2" name="Collisions" visible="0">
   <object id="74" x="455.15" y="2240.51" width="57.9199" height="70.9674"/>
   <object id="75" x="2345.8" y="2492.03" width="12.9016" height="41.786"/>
-  <object id="76" x="2156.88" y="1390.69" width="104.205" height="114.112"/>
+  <object id="76" x="2156.88" y="1384.72" width="104.205" height="120.082"/>
   <object id="77" x="1321.33" y="925.333" width="111.126" height="125.564"/>
   <object id="78" x="1382.67" y="869.333" width="119.126" height="110.115"/>
   <object id="79" x="1446.67" y="816.294" width="108.438" height="107.384"/>
@@ -181,7 +181,7 @@
   <object id="85" x="2614.15" y="2340.38" width="111.568" height="22.6243"/>
   <object id="86" x="2727.18" y="1778.87" width="22.2249" height="576.595"/>
   <object id="87" x="-6.66667" y="2472" width="530.563" height="22.8673"/>
-  <object id="88" x="2626.67" y="1416.51" width="572.864" height="52.9185"/>
+  <object id="88" x="2621.68" y="1416.51" width="572.864" height="52.9185"/>
   <object id="89" x="2693.85" y="965.949" width="56.7158" height="256.203"/>
   <object id="90" x="2626.67" y="779.18" width="61.639" height="235.384"/>
   <object id="91" x="2558.67" y="639.795" width="66.2553" height="189.538"/>
@@ -196,9 +196,9 @@
   <object id="100" x="576.944" y="899.364" width="63.0561" height="378.378"/>
   <object id="101" x="515.792" y="1273.24" width="56.5209" height="1017.93"/>
   <object id="157" x="1735.08" y="1606" width="178" height="240.077"/>
-  <object id="158" x="1802.18" y="1533.95" width="241.089" height="69.4073"/>
+  <object id="158" x="1802.18" y="1529.97" width="241.089" height="73.3874"/>
   <object id="159" x="1915.02" y="1610.26" width="70.2373" height="114"/>
-  <object id="160" x="1194" y="1448" width="436" height="117.102"/>
+  <object id="160" x="1194" y="1444.02" width="436" height="121.082"/>
   <object id="161" x="1511.37" y="1563.88" width="116.923" height="199.898"/>
   <object id="175" x="-4.78052" y="2308.67" width="515.991" height="58.9748"/>
   <object id="179" x="515.743" y="2493.35" width="20.8209" height="101.13"/>
@@ -216,7 +216,7 @@
   <object id="197" x="806.497" y="1964.51" width="117.65" height="115.19"/>
   <object id="198" x="1603.96" y="2184.23" width="180.983" height="172.059"/>
  </objectgroup>
- <objectgroup id="3" name="Objects" visible="0">
+ <objectgroup id="3" name="Objects">
   <object id="1" gid="218" x="2534.67" y="1940" width="64" height="104"/>
   <object id="2" gid="218" x="1686.66" y="2285.33" width="64" height="104"/>
   <object id="3" gid="218" x="858.667" y="2408" width="64" height="104"/>
@@ -226,7 +226,7 @@
   <object id="7" gid="222" x="1925.33" y="2286.67" width="128" height="192"/>
   <object id="8" gid="222" x="2406.67" y="2833.33" width="128" height="192"/>
   <object id="9" gid="222" x="2753.33" y="2645.33" width="128" height="192"/>
-  <object id="11" gid="223" x="433.333" y="2460" width="128" height="192"/>
+  <object id="11" gid="223" x="427.23" y="2468.14" width="128" height="192"/>
   <object id="12" gid="223" x="797.333" y="2461.33" width="128" height="192"/>
   <object id="15" gid="213" x="2242.67" y="1054.67" width="128" height="192"/>
   <object id="16" gid="213" x="786.656" y="684.748" width="128" height="192"/>
@@ -310,5 +310,8 @@
   <object id="200" gid="222" x="1325.23" y="2640.66" width="128" height="192"/>
   <object id="201" gid="222" x="2871.82" y="2114.47" width="128" height="192"/>
   <object id="202" gid="222" x="3132.46" y="2446.41" width="128" height="192"/>
+  <object id="203" gid="214" x="3153.91" y="1595.54" width="128" height="192"/>
+  <object id="204" gid="214" x="2958.89" y="1748.78" width="128" height="192"/>
+  <object id="205" gid="220" x="3092.39" y="1625.72" width="79.9005" height="81.8905"/>
  </objectgroup>
 </map>
