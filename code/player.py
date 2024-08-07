@@ -26,12 +26,12 @@ class Player(pygame.sprite.Sprite):
                         full_path = join(folder_path, file_name)
                         surf = pygame.image.load(full_path).convert_alpha()
                         self.frames[state].append(surf)
-        print(self.frames)
+        
 
     def input(self):
         keys = pygame.key.get_pressed()
-        self.direction.x = int(keys[pygame.K_RIGHT]) - int(keys[pygame.K_LEFT])
-        self.direction.y = int(keys[pygame.K_DOWN]) - int(keys[pygame.K_UP])
+        self.direction.x = int(keys[pygame.K_RIGHT] or keys[pygame.K_d]) - int(keys[pygame.K_LEFT] or keys[pygame.K_a])
+        self.direction.y = int(keys[pygame.K_DOWN] or keys[pygame.K_s]) - int(keys[pygame.K_UP] or keys[pygame.K_w])
         self.direction = self.direction.normalize() if self.direction else self.direction
 
     def move(self, dt):
@@ -62,8 +62,6 @@ class Player(pygame.sprite.Sprite):
                         self.hitbox_rect.top = sprite.rect.bottom
                     self.direction.y = 0  # Stop vertical movement
 
-        # Ensure the player remains within the visible area
-        # self.hitbox_rect.clamp_ip(pygame.Rect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT))
 
     def animate(self, dt):
         #get state
