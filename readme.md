@@ -37,14 +37,14 @@ In this game, you control a player character who must survive against waves of e
 
 ## Project Structure
 
-- `main.py`: The main game script.
-- `settings.py`: Contains game settings and constants.
-- `player.py`: Defines the Player class.
-- `sprites.py`: Contains various sprite classes used in the game.
-- `groups.py`: Defines sprite groups used for collision detection and rendering.
-- `data/maps`: Contains the map files.
-- `audio`: Contains audio files for the game.
-- `images`: Contains image assets for the game.
+- `main.py` : The main game script.
+- `settings.py` : Contains game settings and constants.
+- `player.py` : Defines the Player class.
+- `sprites.py` : Contains various sprite classes used in the game.
+- `groups.py` : Defines sprite groups used for collision detection and rendering.
+- `data/maps` : Contains the map files.
+- `audio` : Contains audio files for the game.
+- `images` : Contains image assets for the game.
 
 ## Features
 
