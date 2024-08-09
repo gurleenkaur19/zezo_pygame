@@ -12,7 +12,6 @@ In this game, you control a player character who must survive against waves of e
 
    ```sh
    git clone <repository_url>
-
    ```
 
 2. Navigate to the project directory:
@@ -49,15 +48,15 @@ In this game, you control a player character who must survive against waves of e
 
 ## Features
 
-- Player Movement: Control the player using the keyboard.
-- Shooting Mechanism: Aim with the mouse and shoot bullets to destroy enemies.
-- Enemy Waves: Survive against increasing waves of enemies.
-- Game Over Screen: Displays the number of enemies killed and the current level when the game ends.
+- `Player Movement` : Control the player using the keyboard.
+- `Shooting Mechanism` : Aim with the mouse and shoot bullets to destroy enemies.
+- `Enemy Waves` : Survive against increasing waves of enemies.
+- `Game Over Screen` : Displays the number of enemies killed and the current level when the game ends.
 
 ## Controls
 
-- Movement: Arrow keys or WASD
-- Shoot: Mouse click
+- `Movement` : Arrow keys or WASD
+- `Shoot` : Mouse click
 
 ## Acknowledgements
 
