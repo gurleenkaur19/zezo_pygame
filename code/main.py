@@ -64,6 +64,14 @@ class Game:
         pygame.time.set_timer(self.enemy_event, 300)
         self.spawn_positions = []
 
+        # enemies killed counter
+        self.enemies_killed = 0
+
+        # levels
+        self.level = 1
+        self.level_thresholds = [15, 30, 45]  # Number of enemies killed to reach next level
+        self.level_gun_cooldowns = [100, 500, 1000, 1500]  # Gun cooldown times for each level
+
         self.setup()
 
     def input(self):
@@ -107,6 +115,8 @@ class Game:
                     self.impact_sound.play()
                     for sprite in collision_sprites:
                         sprite.destroy()
+                        self.enemies_killed += 1  # Increment the counter
+                        self.update_level()  # Check if level needs to be updated
                     bullet.kill()
 
     def player_collision(self):
@@ -128,6 +138,16 @@ class Game:
 
         self.display_surface.blit(start_again_text, start_again_rect)
         self.display_surface.blit(exit_text, exit_rect)
+
+        # Display the number of enemies killed
+        enemies_killed_text = font.render(f"Enemies Killed: {self.enemies_killed}", True, (255, 255, 255))
+        enemies_killed_rect = enemies_killed_text.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2 - 50))
+        self.display_surface.blit(enemies_killed_text, enemies_killed_rect)
+
+        # Display the current level
+        level_text = font.render(f"Level: {self.level}", True, (255, 255, 255))
+        level_text_rect = level_text.get_rect(center=(WINDOW_WIDTH // 2, WINDOW_HEIGHT // 2))
+        self.display_surface.blit(level_text, level_text_rect)
 
         pygame.display.update()
 
@@ -155,6 +175,38 @@ class Game:
                     self.state = "playing"
                 elif exit_rect.collidepoint(mouse_pos):
                     self.running = False
+
+    def draw_top_bar(self):
+        font = pygame.font.Font(None, 36)
+        text = font.render(f"Enemies Killed: {self.enemies_killed}", True, (255, 255, 255))
+        text_rect = text.get_rect(topleft=(10, 10))
+        
+        # Draw black rectangle as background
+        pygame.draw.rect(self.display_surface, (0, 0, 0), text_rect)
+        
+        # Draw the text on top of the black rectangle
+        self.display_surface.blit(text, text_rect)
+
+        # Draw the level on the top right corner
+        level_text = font.render(f"Level: {self.level}", True, (255, 255, 255))
+        level_text_rect = level_text.get_rect(topright=(WINDOW_WIDTH - 10, 10))
+        pygame.draw.rect(self.display_surface, (0, 0, 0), level_text_rect)
+        self.display_surface.blit(level_text, level_text_rect)
+
+    def draw_reload_time(self):
+        font = pygame.font.Font(None, 36)
+        reload_text = font.render(f"Reload Time: {self.gun_cooldown} ms", True, (255, 255, 255))
+        reload_text_rect = reload_text.get_rect(midbottom=(WINDOW_WIDTH // 2, WINDOW_HEIGHT - 10))
+        pygame.draw.rect(self.display_surface, (0, 0, 0), reload_text_rect)
+        self.display_surface.blit(reload_text, reload_text_rect)
+
+    def update_level(self):
+        for i, threshold in enumerate(self.level_thresholds):
+            if self.enemies_killed >= threshold:
+                self.level = i + 2
+                self.gun_cooldown = self.level_gun_cooldowns[i + 1]
+            else:
+                break
 
     def run(self):
         while self.running:
@@ -192,6 +244,8 @@ class Game:
                 # draw
                 self.display_surface.fill(('black'))
                 self.all_sprites.draw(self.player.rect.center)
+                self.draw_top_bar()  # Draw the top bar
+                self.draw_reload_time()  # Draw the reload time
                 pygame.display.update()
             elif self.state == "game_over":
                 start_again_rect, exit_rect = self.draw_game_over()
