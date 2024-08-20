@@ -1,4 +1,4 @@
-# ZERO-HOUR Game
+# ZEZO Game
 
 A 2D survival game built using Pygame where the player must survive against waves of enemies.
 
