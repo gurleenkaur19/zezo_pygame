@@ -11,7 +11,7 @@ class Game:
         # setup
         pygame.init()
         self.display_surface = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
-        pygame.display.set_caption("Zero Hour")
+        pygame.display.set_caption("ZeZo")
         self.clock = pygame.time.Clock()
         self.running = True
         self.state = "menu" 
